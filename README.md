@@ -4,12 +4,8 @@
 
 ## 组件列表
 
--[] input
--[x] input1
-
--[] input
-
--[x] input1
+- [] input
+- [x] input1
 
 ## 运行项目
 
