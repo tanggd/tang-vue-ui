@@ -4,7 +4,7 @@
 
 ## 组件列表
 
-- [] input
+- [ ] input
 - [x] input1
 
 ## 运行项目
