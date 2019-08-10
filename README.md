@@ -1,29 +1,21 @@
-# vv
+# tang-vue-ui
 
-## Project setup
-```
+> 基于vue2的UI库，个人练手项目
+
+## 组件列表
+
+-[] input
+-[x] input1
+
+-[] input
+
+-[x] input1
+
+## 运行项目
+
+```bash
 npm install
-```
-
-### Compiles and hot-reloads for development
-```
 npm run serve
-```
-
-### Compiles and minifies for production
-```
 npm run build
-```
-
-### Run your tests
-```
-npm run test
-```
-
-### Lints and fixes files
-```
 npm run lint
 ```
-
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
