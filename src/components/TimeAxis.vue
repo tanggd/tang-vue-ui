@@ -3,7 +3,7 @@
         <div class="container-visity" :style="{
             left: left + 'px'
         }">
-            <div 
+            <div
                 v-for="i in 3000"
                 :key="i"
                 :title="i"
@@ -11,7 +11,7 @@
                     isHour: i % 100 === 0,
                     isMin: i % 10 === 0
                 }]" >
-                <span 
+                <span
                     v-if="i % 100 === 0"
                     class="time">
                         {{`${ i / 100 }:00`}}
@@ -19,69 +19,65 @@
             </div>
         </div>
         <div>{{left}}</div>
-        
+
     </div>
 </template>
 
 <script>
 
-
-
 export default {
-    name: 'TimeAxis',
-    data() {
-        return {
-            left: 0
-        }
-    },
-    mounted() {
-        const cEl = document.getElementById('cc')
-        // 缩放
-        cEl.addEventListener('mousewheel', (e) => {
-            console.log(111)
-            console.log(e.wheelDelta)
-            // 
-        })
-
-        // 拖动
-        let startClientX = 0
-        let isDown = false
-        cEl.onmousedown = event => {
-            startClientX = event.clientX
-            isDown = true
-        }
-
-        cEl.onmousemove = event => {
-            if (!isDown) {
-                return
-            }
-            cEl.style.cursor = 'move'
-            if (isDown) {
-                console.log('move')
-                const endClientX = event.clientX
-                const diffX = (startClientX - endClientX) * 2
-                if (diffX > 0) {
-                    this.left = this.left + diffX > 0 ? 0 : this.left + diffX
-                    if (this.left === 0) {
-                        return
-                    }
-                } else if (diffX < 0) {
-                    this.left = this.left + diffX < -11111 ? -11111 : this.left + diffX
-                    if (this.left === -11111) {
-                        return
-                    }
-                }
-            }
-        }
-
-        cEl.onmouseup = () => {
-            cEl.style.cursor = 'default'
-            isDown = false
-        }
-
-
+  name: 'TimeAxis',
+  data () {
+    return {
+      left: 0
     }
-    
+  },
+  mounted () {
+    const cEl = document.getElementById('cc')
+    // 缩放
+    cEl.addEventListener('mousewheel', (e) => {
+      console.log(111)
+      console.log(e.wheelDelta)
+      //
+    })
+
+    // 拖动
+    let startClientX = 0
+    let isDown = false
+    cEl.onmousedown = event => {
+      startClientX = event.clientX
+      isDown = true
+    }
+
+    cEl.onmousemove = event => {
+      if (!isDown) {
+        return
+      }
+      cEl.style.cursor = 'move'
+      if (isDown) {
+        console.log('move')
+        const endClientX = event.clientX
+        const diffX = (startClientX - endClientX) * 2
+        if (diffX > 0) {
+          this.left = this.left + diffX > 0 ? 0 : this.left + diffX
+          if (this.left === 0) {
+
+          }
+        } else if (diffX < 0) {
+          this.left = this.left + diffX < -11111 ? -11111 : this.left + diffX
+          if (this.left === -11111) {
+
+          }
+        }
+      }
+    }
+
+    cEl.onmouseup = () => {
+      cEl.style.cursor = 'default'
+      isDown = false
+    }
+  }
+
 }
 </script>
 
